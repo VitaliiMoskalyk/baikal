@@ -13,12 +13,12 @@ body {
   font-style: normal;
   line-height: 1.333;
 }
-.our-propositions {
+section {
   max-width: 1920px;
   margin-left: auto;
   margin-right: auto;
 
-  /*background-color: turquoise;*/
+  background-color: rgb(182, 182, 144);
 }
 ul {
   list-style: none;
@@ -30,19 +30,24 @@ ul {
   margin: 0;
   padding: 0;
 }
-a,
-img {
+a {
   text-decoration: none;
-  display: block;
 }
 
+img {
+  display: block;
+  object-fit: cover;
+}
+ul {
+  position: relative;
+}
 /*MAIN CONTEINER*/
 .conteiner {
   width: 1120px;
   margin-left: auto;
   margin-right: auto;
 
-  padding: 76px 1px 80px 1px;
+  padding: 76px 0px 80px 0px;
 }
 
 /*MAIN CONTENT OF SITE*/
@@ -58,76 +63,71 @@ img {
 
 .propositions {
   font-size: 18px;
-  padding: 16px 16px;
 
   color: var(--background-main);
-  max-width: 256px;
-
-  /*Позиционирование тест*/
-
+  width: 100%;
+  max-height: 75%;
   position: absolute;
-  top: 0px;
-}
-
-.another-propositions li:nth-child(4n + 4) {
-  margin-right: 0;
-}
-.another-propositions li:nth-last-child(-n + 4) {
-  margin-bottom: 0px;
-}
-.propositions:last-child {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 0;
+  padding: 16px 16px;
+  overflow: hidden;
 }
 .propositions.max-title {
   font-size: 24px;
   max-width: 530px;
 }
 
-.propositions-items,
-.another-propositions {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.propositions-items li {
-  margin-right: 30px;
-  margin-bottom: 30px;
-
-  position: relative;
-}
-.propositions-items li::before {
-  content: "";
-  position: absolute;
-  display: inline-block;
-  width: 100%;
-  height: 100%;
-  background-color: #000000;
-  opacity: 0.5;
-  border-radius: 6px;
-}
-.first {
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 572px;
-  background-color: crimson;
-}
-.five li {
-  margin-right: 0;
-}
 .price {
   font-weight: 400;
   font-size: 16px;
 
-  padding: 16px 16px;
-
   color: var(--background-main);
-
-  max-width: 256px;
-
-  /*Тренировка*/
-
+  width: 100%;
+  max-height: 25%;
   position: absolute;
   bottom: 0;
+  padding: 16px 16px;
+  overflow: hidden;
+}
+
+.items-of-elements {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.small-element {
+  position: relative;
+  margin-bottom: 32px;
+  height: fit-content;
+}
+.big-element {
+  position: relative;
+  margin-bottom: 32px;
+}
+.small-element:nth-child(4) {
+  position: absolute;
+  top: 288px;
+}
+.small-element:nth-child(5) {
+  position: absolute;
+  top: 288px;
+  left: 288px;
+}
+.small-element::before,
+.big-element::before {
+  content: "";
+  background: linear-gradient(
+    180deg,
+    #000000 0%,
+    #ffffff 48.44%,
+    #ffffff 76.04%,
+    #000000 100%
+  );
+  opacity: 0.7;
+  mix-blend-mode: multiply;
+  border-radius: 6px;
+  position: absolute;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
 }
